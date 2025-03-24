@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodega Aurora</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <!-- Google Maps API with Web Components -->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJb4GdOHnubAnFDQ_TIM2RyWdRH20pDZc&callback=console.debug&libraries=maps,marker&v=beta"></script>
+    <script src="Scripts/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bodega Aurora</h1>
+        <a href="index.html" class="back-link">Volver a la Exhibición</a>
+    </header>
+
+    <main>
+        <div class="carousel">
+            <img src="Img/winery2.png" alt="Vista 1 de la Bodega Aurora" class="carousel-image active">
+            <img src="Img/winery1-interior.jpg" alt="Vista 2 de la Bodega Aurora" class="carousel-image">
+            <img src="Img/winery1-vineyard.jpg" alt="Vista 3 de la Bodega Aurora" class="carousel-image">
+            <button class="carousel-prev">❮</button>
+            <button class="carousel-next">❯</button>
+        </div>
+
+        <section class="winery-details">
+            <div class="winery-content">
+                <h2>Acerca de la Bodega Aurora</h2>
+                <p>La Bodega Aurora, establecida en 1931, es uno de los productores de vino más reconocidos de Brasil, ubicada en la pintoresca región de Serra Gaúcha. Con casi un siglo de experiencia, Aurora combina técnicas tradicionales de vinificación con innovación moderna para crear vinos galardonados. La bodega es famosa por sus prácticas sostenibles, su herencia familiar y una diversa cartera que atrae tanto a bebedores ocasionales como a conocedores.</p>
+                
+                <div class="location-container">
+                    <div class="location-details">
+                        <h3>Ubicación</h3>
+                        <p><strong>Dirección:</strong> Rua das Vinhas, 123<br>
+                           Bento Gonçalves, RS 95700-000<br>
+                           Brasil</p>
+                        <p><strong>Teléfono:</strong> +55 (54) 3455-2000</p>
+                        <p><strong>Correo:</strong> contacto@vinicolaaurora.com.br</p>
+                        <p><strong>Distancia desde Porto Alegre:</strong> Aproximadamente 120 km</p>
+                    </div>
+                    <gmp-map center="-29.1716,-51.5191" zoom="15" map-id="DEMO_MAP_ID">
+                        <gmp-advanced-marker position="-29.1716,-51.5191" title="Bodega Aurora"></gmp-advanced-marker>
+                    </gmp-map>
+                </div>
+                
+                <h3>Especialidades</h3>
+                <p><strong>Vinos Tintos:</strong> Cabernet Sauvignon, Merlot, Tannat<br>
+                   <strong>Vinos Blancos:</strong> Chardonnay, Sauvignon Blanc, Moscato<br>
+                   <strong>Vinos Espumosos:</strong> Brut, Demi-Sec, Moscatel</p>
+                
+                <h3>Horario de Visitas</h3>
+                <p><strong>Lunes - Viernes:</strong> 9:00 - 17:00<br>
+                   <strong>Sábado:</strong> 10:00 - 15:00<br>
+                   <strong>Domingo:</strong> Cerrado<br>
+                   <strong>Recorridos:</strong> Disponibles con cita previa, incluye cata de vinos</p>
+                
+                <h3>Historia</h3>
+                <p>Fundada por inmigrantes italianos, la Bodega Aurora comenzó como una cooperativa de 16 familias. Hoy en día, representa a más de 1,100 familias, siendo un pilar de la economía local y un símbolo de la viticultura brasileña.</p>
+
+                <!-- YouTube Video -->
+                <h3>Descubre la Bodega Aurora</h3>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-3ROAnQs0Ss?si=ajQE3896jDmkJbtf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Chat Button centered -->
+                <div class="chat-container">
+                    <a href="https://wa.me/555434552000" target="_blank" class="chat-button">Chatea con Nosotros</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Exhibición de Bodegas</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #800020;
+    position: sticky;
+    top: 0; /* Default, will be overridden by JS */
+    background-color: #ffffff;
+    z-index: 1000;
+    transition: top 0.1s ease; /* Faster transition (was 0.2s) */
+}
+
+header.visible {
+    top: 0;
+}
+
+h1 {
+    color: #800020;
+    font-size: 2.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.back-link {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5rem 1rem;
+    background-color: #800020;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-link:hover {
+    background-color: #660018;
+}
+
+/* Main page styles */
+.winery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.winery-card {
+    background-color: #fff;
+    border: 1px solid #800020;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.winery-card:hover {
+    transform: translateY(-5px);
+}
+
+.winery-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.winery-card h2 {
+    color: #800020;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.winery-card p {
+    padding: 0 1rem 1rem;
+    color: #666;
+}
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    overflow: hidden;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-image.active {
+    opacity: 1;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: #ffffff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    opacity: 0.7;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    opacity: 1;
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+/* Individual winery page styles */
+.winery-details {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.winery-content h2 {
+    color: #800020;
+    margin-bottom: 1rem;
+}
+
+.winery-content h3 {
+    color: #800020;
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+/* Location container with map */
+.location-container {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.location-details {
+    flex: 1;
+}
+
+gmp-map {
+    height: 300px;
+    width: 50%;
+    border: 1px solid #800020;
+    border-radius: 5px;
+    display: block;
+}
+
+/* Video container */
+.video-container {
+    margin: 1.5rem 0;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Chat container and button */
+.chat-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.chat-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #800020;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.chat-button:hover {
+    background-color: #660018;
+}
+
+footer {
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #800020;
+    color: #ffffff;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .winery-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .winery-details {
+        padding: 1rem;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        font-size: 1.5rem;
+    }
+
+    .location-container {
+        flex-direction: column;
+    }
+
+    gmp-map {
+        width: 100%;
+        height: 250px;
+    }
+
+    .chat-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .back-link {
+        right: 1rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
